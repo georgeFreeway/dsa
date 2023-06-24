@@ -40,6 +40,7 @@ function isPrime(n) {
   }
   return true;
 }
+//O(sqrt(n))
 console.log(isPrime(5));
 
 //given a positive integer, determine if it is a power of two
@@ -54,5 +55,13 @@ function isPowerOfTwo(n) {
     n = n / 2;
   }
   return true;
+}
+
+function isPowerOfTwoBitwise(n) {
+  if (n < 1) {
+    return false;
+  }
+
+  return (n & (n - 1)) === 0;
 }
 console.log(isPowerOfTwo(2));
