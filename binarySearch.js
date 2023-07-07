@@ -20,21 +20,8 @@ function binarySearch(array, target) {
   return -1;
 }
 
-function recursiveBinarySearch(array, target) {
-  return search(array, target, 0, array.length - 1);
-}
+//Big O = O(log(n))
 
-function search(array, target, leftIndex, rightIndex) {
-  if (leftIndex > rightIndex) {
-    return -1;
-  }
-
-  let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
-  if (target < array[middleIndex]) {
-    return search(array, target, leftIndex, middleIndex - 1);
-  } else {
-    return search(array, target, rightIndex, middleIndex + 1);
-  }
-}
-
-//Big O = O(logn)
+console.log(binarySearch([44, 50, 67, 90, 102], 50));
+console.log(binarySearch([44, 50, 67, 90, 102], 67));
+console.log(binarySearch([44, 50, 67, 90, 102], 70));
